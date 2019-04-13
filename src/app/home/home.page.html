@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list #mylist>
+ 
+    <ion-list-header>
+      <ion-label>My Items</ion-label>
+    </ion-list-header>
+ 
+    <ion-item-sliding *ngFor="let item of items">
+ 
+      <ion-item routerLink="/tabs/(details:{{item.id}})">
+        <ion-label text-wrap>
+          <h3>{{ item.prod_name }}</h3>
+          <ion-text color="secondary">
+            <p>{{ item.prod_price }}</p>
+          </ion-text>
+          <p>{{ item.updated_at | date:'short'}}</p>
+          <p>{{ item.id }}</p>
+        </ion-label>
+      </ion-item>
+     </ion-item-sliding>
+  </ion-list>
+  </ion-content>
